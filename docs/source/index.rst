@@ -1,17 +1,23 @@
-Welcome to Lumache's documentation!
-===================================
+Opal Framework
+==============
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+Opal is a command line framework for Bash users. This `Opal Framework
+<https://github.com/andrewwoods/opal>`_ can be found on Github, and provides a
+solid foundation for your dotfiles. This foundation can be easily re-used
+across users and machines. Opal is designed to be easily extended, allowing you
+to add your custom configuration on top of it. Put simply, Opal is a collection
+of unix/linux dotfiles and utilities, reusable across machines and users, for
+people who love the command line.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Version
+-------
+
+The current Opal version is 3.0, and was released on 2024 MMM 28 DAY.
 
 .. note::
 
-   This project is under active development.
+   The Opal Documentation project is under active development, in anticipation
+   for the upcoming Opal Version 3.0 launch.
 
 Contents
 --------
