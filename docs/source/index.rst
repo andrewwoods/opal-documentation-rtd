@@ -26,3 +26,54 @@ Contents
 
    usage
    api
+
+
+Outline
+-------
+
+This is a mockup for the Table of Contents
+
+
+* Installing Opal
+* Updating Opal
+* Bash
+
+  - Opal Coding Standard
+  - Files
+
+    * bash_profile
+    * bashrc
+
+  - Core
+  - Functions
+
+    * Prompts
+    * Strings
+    * Developer
+    * Files
+    * Directories
+
+  - Aliases
+
+* Scripting Bash
+
+  - Standard Error
+  - Conditionals
+  - Equality
+  - Existence Checks
+  - Logging
+  - User Experience
+  - Dates and Formats
+
+
+* Editors
+
+  - Neovim
+  - Vim
+
+* Git
+* Data
+* Themes
+* Frequently Asked Questions (FAQ)
+* Help
+
