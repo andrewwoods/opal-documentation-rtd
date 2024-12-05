@@ -6,8 +6,8 @@ project = 'Opal'
 copyright = '2024, Andrew Woods'
 author = 'Andrew Woods'
 
-release = '0.1'
-version = '0.1.0'
+release = '3.0'
+version = '3.0.0-alpha'
 
 # -- General configuration
 
