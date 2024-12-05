@@ -25,7 +25,8 @@ Contents
 .. toctree::
 
    setup
-   api
+   bash
+
 
 
 Outline
@@ -34,27 +35,8 @@ Outline
 This is a mockup for the Table of Contents
 
 
-* Installing Opal
-* Updating Opal
-* Bash
 
-  - Opal Coding Standard
-  - Files
-
-    * bash_profile
-    * bashrc
-
-  - Core
-  - Functions
-
-    * Prompts
-    * Strings
-    * Developer
-    * Files
-    * Directories
-
-  - Aliases
-
+* Opal Coding Standard
 * Scripting Bash
 
   - Standard Error
