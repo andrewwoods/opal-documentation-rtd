@@ -12,7 +12,7 @@ people who love the command line.
 Version
 -------
 
-The current Opal version is 3.0, and was released on 2024 MMM 28 DAY.
+The current Opal version is 3.0, and is planned for release in 2025 August.
 
 .. note::
 
@@ -26,6 +26,7 @@ Contents
 
    setup
    bash
+   bash-core
 
 
 
