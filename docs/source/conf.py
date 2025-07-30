@@ -28,8 +28,9 @@ intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 
 # -- Options for HTML output
-
-html_theme = 'sphinx_rtd_theme'
+# The "alabaster" theme is one of the default Sphinx themes.
+# It's best to make your own theme sooner rather than later.
+html_theme = "alabaster"
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
