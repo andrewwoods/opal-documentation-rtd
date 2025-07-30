@@ -1,28 +1,36 @@
 Bash
 ====
 
-The Bash shell is the foundation for the Opal framework. 
+The Bash shell is the foundation for the Opal framework. With version 3 of
+Opal, a scripting layer was added, designed to improve the experience of
+writing Bash scripts. In some case, an opal function is just a friendly wrapper
+around native Bash behavior. In others, new functionality is added.
+
+This section of the Opal Documentation will describe the structure of the project
+and provide you with guidance on how to use the Opal framework.
 
 Files
 -----
 
-Bash uses two main configuration files - ~/.bashrc and ~/.bash_profile - to
-configure the user experience.
+Bash uses two main configuration files - `~/.bashrc` and `~/.bash_profile` - to
+configure the user experience. Typically, the operating system will provide you
+with some minimal configuration. When Opal is installed, It will back up these
+files, and replace them with a more structured version that loads Opal as a
+dependency. That backup contains the current time in UNIX epoch seconds in the
+filename.
+
+Opal has a counterpart to each of the user configuration files.
 
 bashrc.bash
 ^^^^^^^^^^^
 
 The bashrc.bash file is read by ~/.bashrc
-   
+
 bash_profile
 ^^^^^^^^^^^^
 
 The bash_profile.bash file is read by ~/.bash_profile
 
-Core
----- 
-
-The contents of the core.bash are required for Opal.
 
 Functions
 ---------
@@ -31,16 +39,16 @@ The functions.bash file is a collection of general Opal functions. When a set
 of functions gets big enough, they get moved to a separate file e.g. prompt
 functions.  
 
-Prompts
-^^^^^^^
+Core
+----
 
-This is a collection of functions to give you control over how prompts are
-displayed in Bash.
+The contents of the core.bash are required for Opal.
 
-Strings
-^^^^^^^
+Date Time
+^^^^^^^^^
 
-This is a collection of functions for handling strings in Bash.
+Functions for improving the user experience of manipulating dates and times.
+
 
 Developer
 ^^^^^^^^^
@@ -56,6 +64,32 @@ Directory
 ^^^^^^^^^
 
 Improve the UX of handling files with these directory-related functions.
+
+Prompts
+^^^^^^^
+
+This is a collection of functions to give you control over how prompts are
+displayed in Bash.
+
+Strings
+^^^^^^^
+
+This is a collection of functions for handling strings in Bash.
+
+System
+^^^^^^
+
+These functions interact with the operating system, and help
+
+
+Util
+^^^^
+
+A set of functions for creating scripts where the content of the presention is
+is the focus. The functions don't make use of the `opal:` namespace, they use
+a leading `_` (underscore). This file is intentionally not loaded by Opal.
+
+
 
 Aliases
 -------
