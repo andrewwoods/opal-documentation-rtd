@@ -44,6 +44,14 @@ Functions
 The core file contains all the essential functions of the Opal framework.
 The functions in here are the primary code dependency.
 
+The contents of the core.bash are required for Opal. There are several Bash
+files that make up Opal, but core.bash is meant to provide the foundation. One
+reason you might want to use just this file is to create your own Bash app,
+Loading just this file makes it easy for you to create, without having to
+override different parts of the framework. 
+
+This file is divided into multiple sections. Each sections contains multiple
+functions.
 
 General
 ^^^^^^^
@@ -51,41 +59,60 @@ General
 function opal:version
 #####################
 
+Display the current version of the Opal framework. Uses the OPAL_VERSION
+variable.
+
 function opal:about
 ###################
 
+Display notice about what Opal is, where to find the repo, and copyright notice.
 
 opal:std_error
 ##############
 
+Use this to write a message to Standard Error. This makes it easier for people 
+to write a message
+
 opal:is_set
 ###########
 
-This describes the is_set function.
+Check to see if a value is present. This is a wrapper function for Bash's `-n` check.
 
 opal:is_unset
 #############
 
-This describes the is_unset function. It does the opposite.
+Check to see if a value is not present. This is a wrapper function for Bash's `-z` check.
 
 
 opal:success()
 ##############
 
+Write a success message written in a bright green color. 
+
 opal:failure()
 ##############
+
+Write a failure message written in a bright red color. 
 
 opal:message()
 ##############
 
+Write a informational message written in a bright cyan color. 
+
 opal:label()
 ############
+
+Write a label written in a bright yellow color. 
 
 opal:speak()
 ############
 
+Here a string of text spoken instead of just displayed on the screen.
+
 opal:ask()
 ##########
+
+
 
 opal:sleep()
 ############
@@ -162,17 +189,35 @@ opal:log_debug
 Time
 ^^^^
 
+We often need to display dates and times differently, depending upon where you
+are in the world. So it's helpful to have functions for improving the user
+experience of manipulating dates and times.
+
 opal:get_date_format()
 ######################
+
+The `opal:get_date_format` provides a lookup to retrieve a date format by name.
+There are many formats for you to choose from. It provides some logic for the
+today and someday functions. 
 
 opal:today()
 ############
 
+The `opal:today` functions display the current date/time based on the format.
+By default, it uses the `opal-datetime` format. However, you specify a format
+name as the first argument.
+
 opal:someday()
 ##############
 
+The `opal:someday` is a sibling function to the `opal:today` function. It
+translates a UNIX timestamp into a recognizable format. You specify a UNIX timestamp as the
+first parameter, and a format name as the second argument.
+
 opal:duration()
 ###############
+
+The `opal:duration` tells you the difference in time between two unix timestamps.
 
 opal:interval_to_seconds()
 ##########################

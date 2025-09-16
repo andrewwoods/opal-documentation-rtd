@@ -24,12 +24,17 @@ Opal has a counterpart to each of the user configuration files.
 bashrc.bash
 ^^^^^^^^^^^
 
-The bashrc.bash file is read by ~/.bashrc
+The bashrc.bash file is read by your ~/.bashrc. It provides some suggested
+functionality to help improve your experience.. Upon install, when your
+~/.bashrc is created, an "include" of this file is provided. Since this file is
+considered optional, you can choose to comment it out. 
 
-bash_profile
-^^^^^^^^^^^^
+bash_profile.bash
+^^^^^^^^^^^^^^^^^
 
-The bash_profile.bash file is read by ~/.bash_profile
+This provides some environmental settings. This is where you'll find some
+popular exported varibles like PATH, XDG_CONFIG_HOME, and EDITOR. The
+bash_profile.bash file is read by ~/.bash_profile
 
 
 Functions
@@ -42,12 +47,10 @@ functions.
 Core
 ----
 
-The contents of the core.bash are required for Opal.
 
 Date Time
 ^^^^^^^^^
 
-Functions for improving the user experience of manipulating dates and times.
 
 
 Developer
