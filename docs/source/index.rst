@@ -27,6 +27,7 @@ Contents
    setup
    bash
    bash-core
+   bash-aliases
 
 
 
