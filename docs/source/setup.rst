@@ -39,46 +39,19 @@ This is the easiest method, recommended for most users.
 2. Click the green "Code" button above the file list.
 3. Click the "Download ZIP" text.
 4. Save the file `opal-master.zip` file to your system.
-5. Move the file to your $HOME directory.
-6. Extract the file `opal-master.zip`
-7. Rename the new directory from `opal-master` to `opal`.
+5. Extract the file `opal-master.zip`
+6. Run the Install Script in your Terminal
 
 .. code-block:: console
 
-   $ mv opal-master opal
+  $ ./install.bash
 
-8. Run the Install Script
-
-.. code-block:: console
-
-   $ ./opal/install.bash
-
-
-Install via Git Clone
-^^^^^^^^^^^^^^^^^^^^^
-
-1. Visit the `Opal Github <https://github.com/andrewwoods/opal>`_ Repository.
-2. Click the green "Code" button above the file list.
-3. Click the "Download ZIP" text.
-4. Copy the HTTPS URL `opal-master.zip` file to your system.
-5. Open your Terminal
-6. Clone the repo
-
-.. code-block:: console
-
-   $ git clone https://github.com/andrewwoods/opal.git
-
-7. Run the Install Script
-
-.. code-block:: console
-
-   $ ./opal/install.bash
 
 After Installation
 ^^^^^^^^^^^^^^^^^^
 
 Begin by opening a new terminal window. You'll want to ensure the environment
-is fresh. Reloading ~/.bashrc in your current terminal window may have
+is fresh. Reloading `~/.bashrc` in your current terminal window may have
 unexpected results.
 
 
@@ -87,13 +60,8 @@ can add the Opal Dark or Opal Light color palette to your current profile.
 These palettes attempt to provide better accessibility by improving color
 contrast by tweaking the default ANSI color values.
 
-A backup of your ~/.bash_profile and ~/.bashrc files were created during the
+A backup of your `~/.bash_profile` and `~/.bashrc` files were created during the
 installation process. As you manually copy things back in, this is a good time
 to clean house. As you comb through your original config files, you get to
 evaluate what it still worth keeping.
-
-Update
-------
-
-TODO: Document the update process.
 
