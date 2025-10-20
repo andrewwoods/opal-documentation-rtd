@@ -28,6 +28,7 @@ Contents
    bash
    bash-core
    bash-aliases
+   bash-clocks
 
 
 
