@@ -193,34 +193,8 @@ We often need to display dates and times differently, depending upon where you
 are in the world. So it's helpful to have functions for improving the user
 experience of manipulating dates and times.
 
-opal:get_date_format()
-######################
+These functions are in `Bash Datetime <bash-datetime.html>`_
 
-The `opal:get_date_format` provides a lookup to retrieve a date format by name.
-There are many formats for you to choose from. It provides some logic for the
-today and someday functions. 
-
-opal:today()
-############
-
-The `opal:today` functions display the current date/time based on the format.
-By default, it uses the `opal-datetime` format. However, you specify a format
-name as the first argument.
-
-opal:someday()
-##############
-
-The `opal:someday` is a sibling function to the `opal:today` function. It
-translates a UNIX timestamp into a recognizable format. You specify a UNIX timestamp as the
-first parameter, and a format name as the second argument.
-
-opal:duration()
-###############
-
-The `opal:duration` tells you the difference in time between two unix timestamps.
-
-opal:interval_to_seconds()
-##########################
 
 File System
 ^^^^^^^^^^^
