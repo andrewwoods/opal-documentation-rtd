@@ -199,32 +199,8 @@ These functions are in `Bash Datetime <bash-datetime.html>`_
 File System
 ^^^^^^^^^^^
 
-opal:ensure_dir_exists
-######################
+These functions are in `Bash System <bash-system.html>`_
 
-opal:dir_exists
-###############
-
-opal:file_exists
-################
-
-opal:symlink_exists
-###################
-
-opal:file_has_read
-##################
-
-opal:file_has_write
-###################
-
-opal:file_has_execute
-#####################
-
-opal:file_has_set_uid
-#####################
-
-opal:file_has_set_gid
-#####################
 
 Unprocessed
 ^^^^^^^^^^^
