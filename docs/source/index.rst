@@ -30,6 +30,7 @@ Contents
    bash-aliases
    bash-clocks
 
+   bash-util
 
 
 Outline
