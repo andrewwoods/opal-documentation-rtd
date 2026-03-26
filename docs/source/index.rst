@@ -31,6 +31,7 @@ Contents
    bash-clocks
 
    bash-util
+   bash-developer 
 
 
 Outline
