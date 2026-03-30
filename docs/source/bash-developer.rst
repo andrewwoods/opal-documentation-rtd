@@ -33,23 +33,21 @@ is printed to the screen. Be kind to systems.
 function opal:http_status()
 ###########################
 
-This function uses curl to make the request. Each time it checks, an indicator
-is printed to the screen. Be kind to systems. 
+This function checks a local file for a user-provided status code for it's title .
 
-@param string $url
+@param int $status_code
 
-@param int $check_interval The number of seconds to wait to check again.
-    Default = 60 seconds.
+@return string
 
-@return void
-
-@uses curl
+@uses grep
 
 .. code-block:: bash
 
-    $ opal:check_site 'http://example.com'
-
-    $ opal:check_site 'http://example.com' 300
+    $ opal:http_status 307
+    307:Temporary Redirect
+      The resource resides temporarily at a different URI, but keep using this one since it MAY change on occasion
+ 
+    see https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes
 
 
 function opal:parse_git_branch()
