@@ -32,6 +32,8 @@ Contents
 
    bash-util
    bash-developer 
+   bash-directory
+   bash-system
 
 
 Outline
