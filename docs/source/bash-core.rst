@@ -56,66 +56,202 @@ functions.
 General
 ^^^^^^^
 
-function opal:version
-#####################
+opal:version()
+##############
 
-Display the current version of the Opal framework. Uses the OPAL_VERSION
-variable.
+    Display the current version of the Opal framework. Uses the OPAL_VERSION variable.
 
-function opal:about
-###################
+    @return void
 
-Display notice about what Opal is, where to find the repo, and copyright notice.
+.. code-block :: bash
+
+    $ opal:version
+    Opal version: 3.0.0-beta
+
+
+opal:about()
+############
+
+    Display notice about what Opal is, where to find the repo, and copyright notice.
+
+    @return void
+
+.. code-block :: bash
+
+    $ opal:about
+    Opal version: 3.0.0-beta
+    
+    Opal is a command line framework. It's a foundation to provide a consistent
+    foundation across machines and users. It's meant to be extended. Version 3
+    improves the scripting experience.
+
+    For the most up-to-date version, and the full documentation, visit the
+    Github repo at https://github.com/andrewwoods/opal
+
+    Copyright (C) 2023-2025 Andrew Woods
+
+
 
 opal:std_error
 ##############
 
-Use this to write a message to Standard Error. This makes it easier for people 
-to write a message
+    Use this to write a message to Standard Error. This makes it easier for
+    people to write an error message that can be redirected.
+
+    @param string $message
+        The user-facing error message 
+
+    @return void
+        The same message but redirected to STDERR
+
+.. code-block :: bash
+
+    $ opal:std_error "Something went wrong"
+
+
 
 opal:is_set
 ###########
 
-Check to see if a value is present. This is a wrapper function for Bash's `-n` check.
+    Check to see if a value is present. 
+
+    This is a wrapper function for Bash's ``-n`` check. The value has a length
+    greater than zero.  
+    
+
+    @param string|int $value
+        The user's content
+
+    @return bool
+        
+.. code-block :: bash
+
+    name="World"
+    if opal:is_set "$1"; then
+        name="$1"
+    fi
+    echo "Hello $name"
+
 
 opal:is_unset
 #############
 
-Check to see if a value is not present. This is a wrapper function for Bash's `-z` check.
+    Check to see if a value is not present. 
+
+    This is a wrapper function for Bash's `-z` check. A null or empty string will return true.
+
+    @param string $value
+        The user-facing error message 
+
+    @return bool
+
+.. code-block :: bash
+
+    if opal:is_unset "$1"; then
+        opal:std_error "Please specify a value"
+        return 1
+    fi
 
 
 opal:success()
 ##############
 
-Write a success message written in a bright green color. 
+    Write a success message written in a bright green color. 
+
+    @param string $message
+        The user-facing error message 
+
+    @return string
+        The same message wrapped in terminal escape codes
+
 
 opal:failure()
 ##############
 
-Write a failure message written in a bright red color. 
+    Write a failure message written in a bright red color. 
+
+    @param string $message
+        The user-facing error message 
+
+    @return string
+        The same message wrapped in terminal escape codes
 
 opal:message()
 ##############
 
-Write a informational message written in a bright cyan color. 
+    Write a informational message written in a bright cyan color. 
+
+    @param string $message
+        The user-facing info message 
+
+    @return string
+        The same message wrapped in terminal escape codes
+
 
 opal:label()
 ############
 
-Write a label written in a bright yellow color. 
+    Write a label written in a bright yellow color. 
+
+    @param string $message
+        The user-facing error message 
+
+    @return string
+        The same message wrapped in terminal escape codes
 
 opal:speak()
 ############
 
-Here a string of text spoken instead of just displayed on the screen.
+    Read out loud a string of text. Assumes the ``say`` command is installed. 
+
+    @param string $message
+        The user-facing content
+
+    @return string
+        The same message wrapped in terminal escape codes
 
 opal:ask()
 ##########
 
+    Prompt the user with a statement and receive their input
+
+    The opal:label functions provides colored text
+
+    @param string $prompt
+        What is your request of the user
+
+    @return string
+        the user input
+
+.. code-block :: bash
+
+   $ answer="$(opal:ask "Would you like to play a nice game of chess?")"
+   $ echo "The answer was $answer"
 
 
 opal:sleep()
 ############
+
+    Pause execution for a limited number of seconds. Default is 5 seconds.  
+
+    This wraps the standard sleep command. The benefit is to tell you how long
+    it will sleep. It also prevents execution from sleeping forever, by ensuring
+    a default value is provided.
+
+    @param int $seconds
+        
+
+    @return string
+        The same message wrapped in terminal escape codes
+
+.. code-block :: bash
+
+    $ opal:sleep
+    Using default value.
+    Sleeping for 5 seconds
+
+    $ opal:sleep 3
+    Sleeping for 3 seconds
 
 Conditionals
 ^^^^^^^^^^^^
