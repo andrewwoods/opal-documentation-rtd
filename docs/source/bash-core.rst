@@ -337,16 +337,3 @@ File System
 
 These functions are in `Bash System <bash-system.html>`_
 
-
-Unprocessed
-^^^^^^^^^^^
-
-.. code-block :: bash
-
-   function opal:about_macos {
-   function opal:about_macos_fallback {
-   function opal:about_popos {
-   function opal:about_popos_fallback {
-   function opal:about_ubuntu {
-
-
