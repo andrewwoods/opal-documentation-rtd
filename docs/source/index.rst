@@ -29,6 +29,7 @@ Contents
    bash-core
    bash-aliases
    bash-clocks
+   bash-datetime
 
    bash-developer 
    bash-directory
