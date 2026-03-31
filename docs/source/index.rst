@@ -30,10 +30,10 @@ Contents
    bash-aliases
    bash-clocks
 
-   bash-util
    bash-developer 
    bash-directory
    bash-system
+   bash-util
 
 
 Outline
