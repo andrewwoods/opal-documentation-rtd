@@ -124,7 +124,7 @@ opal:is_set
 
     @return bool
         
-.. code-block :: bash
+.. code-block:: bash
 
     name="World"
     if opal:is_set "$1"; then
@@ -140,12 +140,32 @@ opal:is_unset
 
     This is a wrapper function for Bash's `-z` check. A null or empty string will return true.
 
-    @param string $value
-        The user-facing error message 
+    @param string|int $value
+        The user's content 
 
     @return bool
 
-.. code-block :: bash
+.. code-block:: bash
+
+    if opal:is_unset "$1"; then
+        opal:std_error "Please specify a value"
+        return 1
+    fi
+
+opal:is_empty
+#############
+
+    An enhancement of opal:is_unset
+
+    A null or empty string will return true. This function additionally trims
+    whitespace from both ends of the input for comparison. So a string
+    consisting entirely of whitespace will evaluate true.  
+
+    @param string $value
+
+    @return bool
+
+.. code-block:: bash
 
     if opal:is_unset "$1"; then
         opal:std_error "Please specify a value"
@@ -164,6 +184,10 @@ opal:success()
     @return string
         The same message wrapped in terminal escape codes
 
+.. code-block:: bash
+
+    opal:success "This is your message"
+
 
 opal:failure()
 ##############
@@ -176,6 +200,10 @@ opal:failure()
     @return string
         The same message wrapped in terminal escape codes
 
+.. code-block:: bash
+
+    opal:failure "This is your success message"
+
 opal:message()
 ##############
 
@@ -186,6 +214,10 @@ opal:message()
 
     @return string
         The same message wrapped in terminal escape codes
+
+.. code-block:: bash
+
+    opal:message "This is your informational message"
 
 
 opal:label()
@@ -199,6 +231,10 @@ opal:label()
     @return string
         The same message wrapped in terminal escape codes
 
+.. code-block:: bash
+
+    opal:label "This is your informational message"
+
 opal:speak()
 ############
 
@@ -209,13 +245,17 @@ opal:speak()
 
     @return string
         The same message wrapped in terminal escape codes
+    
+    @uses say
+
+.. code-block:: bash 
+
+   opal:speak 'Would you like to play a nice game of chess?'
 
 opal:ask()
 ##########
 
     Prompt the user with a statement and receive their input
-
-    The opal:label functions provides colored text
 
     @param string $prompt
         What is your request of the user
@@ -223,7 +263,9 @@ opal:ask()
     @return string
         the user input
 
-.. code-block :: bash
+    @uses opal:label
+
+.. code-block:: bash
 
    $ answer="$(opal:ask "Would you like to play a nice game of chess?")"
    $ echo "The answer was $answer"
