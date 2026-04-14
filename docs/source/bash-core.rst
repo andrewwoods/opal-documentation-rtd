@@ -332,37 +332,178 @@ opal:function_exists
 Logging
 ^^^^^^^
 
-There are several logging-related functions.
+The ability to record errors about our code is important. Getting feedback about our code
+is how we understand to make it better. Opal provides a collection of logging functions,
+one for each of the eight syslog levels, defined in RFC 5424. 
+
 
 opal:log
 ########
 
-Ohis is the opal:log function description
+Write a message to the error log, including the log level. This does the actual
+writing to the log file.
+
+
+ @param string $level
+   The logging level of the message. The RFC 5424 determines the levels.
+   The level determines the importance of the message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+.. code-block:: bash
+
+   $ opal:log ERROR "Something went wrong"
+
 
 opal:log_emergency
 ##################
 
+Log an EMERGENCY-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_emergency "Something went very wrong. Fix it STAT!"
+
 opal:log_alert
 ##############
+
+Log an ALERT-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_alert "Something went very wrong. Please respond!"
+
 
 opal:log_critical
 #################
 
+Log a CRITICAL-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_critical "Oh No! Something went very wrong!"
+
 opal:log_error
 ##############
+
+Log an ERROR-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_error "An error has occurred!"
 
 opal:log_warning
 ################
 
+Log an WARNING-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_warning "An error has occurred!"
+
 opal:log_notice
 ###############
+
+Log a NOTICE-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_notice "hrmm, that's weird"
 
 opal:log_info
 #############
 
+Log an INFO-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_info "This is something you should know."
+
 opal:log_debug
 ##############
 
+Log an DEBUG-level message.
+
+ @param string $message
+   The message you want to write to the error log.
+
+ @param string $filepath
+   Optional. The log file $HOME/.local/state/opal/error.log will be
+   if not specified.
+
+ @uses opal:log
+
+.. code-block:: bash
+
+   $ opal:log_debug "A developer wanted to know this."
 
 Time
 ^^^^
