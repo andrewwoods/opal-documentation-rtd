@@ -13,8 +13,19 @@ change to a directory and list its content
 
 .. code-block :: bash
 
-    $ opal:cdls
-    Opal version: 3.0.0-beta
+    $ opal:cdls ~/opal/bin
+
+opal:mkcd()
+-----------
+
+make a directory, and then change to it.
+
+@param String $directory
+
+.. code-block:: bash
+
+    $ opal:mkcd ~/src/to/project 
+
 
 opal:xdg_data_dir()
 -------------------
