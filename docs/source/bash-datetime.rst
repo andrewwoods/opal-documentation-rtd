@@ -16,7 +16,9 @@ opal:today
     @return string $duration
         The date formatted according to the given style and format
 
-The `opal:today` functions display the current date/time based on the format.
+    @uses opal:get_date_format
+
+The `opal:today` function displays the current date/time based on the format.
 By default, it uses the `opal-datetime` format. However, you specify a format
 name as the first argument.
 
@@ -29,8 +31,9 @@ format.
     $ opal:today unix
     1761157954
 
-The other format names follow a pattern. An example is shown here. The available formats and precision
-values are defined in the ``opal:get_date_format`` function.
+The other format names follow a pattern. An example is shown here. The
+available formats and precision values are defined in the
+``opal:get_date_format`` function.
 
 .. code-block :: bash
 
@@ -50,22 +53,22 @@ values are defined in the ``opal:get_date_format`` function.
 opal:someday
 ------------
 
+    It translates a UNIX timestamp into a recognizable format.
+
     @param int $unix_time
         Number of seconds since 1970-01-01T00:00:00-0000
 
     @param string $formatname
-        the name containing the date style and precision separated by a hypen e.g. opal-datetime
+        Optional. The name containing the date style and precision separated by a hypen e.g. opal-datetime
 
     @return string $duration    
         The date formatted according to the given style and format
 
-The `opal:someday` is a sibling function to the `opal:today` function. It
-translates a UNIX timestamp into a recognizable format. You specify a UNIX timestamp as the
-first parameter, and a format name as the second argument.
+    @uses opal:get_date_format
 
 The ``opal:someday`` function is a companion to the ``opal:today`` function. When
 you already have a UNIX timestamp, use ``opal:someday`` to display the
-corresponding date in your preferred format.
+corresponding date in your preferred format. If the second parameter is not passed, the `opal:datetime` format will be used.
 
 .. code-block :: bash
 
@@ -92,9 +95,9 @@ opal:get_date_format
     2025 Oct 22 Wed
 
 The ``opal:get_date_format`` is the workhorse the date functions. It
-centralizes the logic of the date style and precision values. Almost all format names
-follow a predicatble pattern. This pattern is a combination of *style* and
-*precision*. The style refers to how the date is formatted. output. The
+centralizes the logic of the date style and precision values. Almost all format
+names follow a predicatble pattern. This pattern is a combination of *style*
+and *precision*. The style refers to how the date is formatted. The
 precision values are ``date``, ``datetime``, and ``timestamp``. The timestamp
 is normally the only one that includes the timezone to ensure maximum
 precision, since one expects precision from a timestamp. In most common use
@@ -111,7 +114,9 @@ The supported date styles are as follows:
 * filename
 
 The name ``unix`` is a singular format, as it works differently from
-the others. It returns the value equivalent to the    
+the others. It returns the number of seconds since the UNIX epoch 1970-01-01T00:00:00-0000
+
+The Chicago Manual of Style (CMOS) is used by various industries for their publications. The `cmos` format refers to the format. If you dislike the ambiguity of the `us` style, I encourage you to try the `cmos` date style.   
 
 The following example uses the Opal project preferred format. Yes, I'm aware of
 the `XKCD commentary about standards <https://xkcd.com/927/>`_ but there is a
@@ -131,6 +136,19 @@ length no matter the time of year, for a given precision.
 
     $ opal:today opal-timestamp
     2025 Oct 22 Wed 14:51:53-0400
+
+Looking to use a day-first format? Try the `world` style
+
+.. code-block :: bash
+
+    $ opal:today world-date
+    22/10/2025
+
+    $ opal:today opal-datetime
+    22/10/2025 14:51
+
+    $ opal:today opal-timestamp
+    22/10/2025 14:51:53-0400
 
 
 opal:duration
@@ -181,6 +199,22 @@ opal:interval_to_seconds
     $ opal:interval_to_seconds days 2
     172800
 
+
+opal:epoch
+----------
+
+    Get the UNIX epoch seconds for a given date, assuming midnight.
+    
+    @param string $date
+        The date formatted as YYYY-MM-DD
+
+    @return integer $seconds
+        The date represented in UNIX epoch seconds
+
+.. code-block :: bash
+
+    $ opal:epoch 2026-03-17 
+    1773763125
 
 
 
