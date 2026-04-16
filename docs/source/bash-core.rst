@@ -24,10 +24,13 @@ Export Variables
     # The $OPAL_CONFIG_DIR is not meant to replace the XDG_CONFIG_HOME directory.
     # Rather it's an additional directory - one that could be used in the
     # XDG_CONFIG_DIRS list of directories.
-    export OPAL_CONFIG_DIR="${HOME}/opal/config"
-    export OPAL_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/opal"
-    export OPAL_STATE_DIR="${XDG_DATA_HOME:-$HOME/.local/state}/opal"
-    export OPAL_LOG_DIR="${OPAL_STATE_DIR}"
+    export OPAL_CONFIG_DIR="${OPAL_DIR}/config"
+
+    # This makes the log file accessible as a variable. However, it's preferred that
+    # the opal:data_dir, opal:state_dir, opal:cache_dir and opal:config_dir
+    export OPAL_XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}/opal"
+    export OPAL_LOG_FILE="${OPAL_XDG_STATE_HOME}/error.log"
+
 
 
 
