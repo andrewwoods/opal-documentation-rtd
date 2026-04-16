@@ -46,6 +46,18 @@ This is the easiest method, recommended for most users.
 
   $ ./install.bash
 
+Install via Git Clone
+^^^^^^^^^^^^^^^^^^^^^
+
+This is the method for project contributors.
+
+.. code-block:: console
+
+  $ cd ~
+  $ git clone https://github.com/andrewwoods/opal opal
+  $ cd opal
+  $ ./install.bash
+
 
 After Installation
 ^^^^^^^^^^^^^^^^^^
@@ -60,8 +72,8 @@ can add the Opal Dark or Opal Light color palette to your current profile.
 These palettes attempt to provide better accessibility by improving color
 contrast by tweaking the default ANSI color values.
 
-A backup of your `~/.bash_profile` and `~/.bashrc` files were created during the
-installation process. As you manually copy things back in, this is a good time
-to clean house. As you comb through your original config files, you get to
-evaluate what it still worth keeping.
+A backup of your main config files were created during the installation process
+using the current UNIX epoch timestamp. As you manually copy things back in,
+this is a good time to clean house. As you comb through your original config
+files, you get to evaluate what it still worth keeping.
 
