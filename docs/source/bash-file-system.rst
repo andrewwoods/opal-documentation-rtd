@@ -1,6 +1,6 @@
 
-Bash System
-==============
+Bash File System
+================
 
 These functions interact with the operating system, and help improve the user
 experience. 
