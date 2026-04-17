@@ -400,27 +400,180 @@ Opal provides a function to combine that logic into a single function name:
 opal:number_equals
 ##################
 
+Check for the equality of two numbers.
+
+@param integer 
+
+@param integer 
+
+@returns bool
+
+.. code-block:: bash
+
+    # 
+    # Bash uses $? to expand to the exit status of the most recently 
+    # executed command.
+    #
+    if opal:number_equals $? 0; then
+        opal:success 'The command succeeded'
+    else
+        opal:failure 'The command failed'
+    fi
+
+    #
+    # If you only wanted to check for failure, you can 
+    # negate the condition.
+    #
+    if ! opal:number_equals $? 0; then
+        opal:failure 'The command failed'
+    fi
+
+
 opal:number_at_least
 ####################
+
+The name `number_at_least` is a simpler way of saying `greater than or equal to`,
+and without using an abbreviation. 
+
+@param integer $value 
+
+@param integer $minimum
+
+@returns bool
+
+.. code-block:: bash
+
+    #
+    # In the shell, an exit status of 0 is zero. Any integer 1 or more represents
+    # an error. 
+    # 
+    if ! opal:number_at_least $? 1; then
+        opal:failure 'The command failed'
+    fi
 
 opal:number_is_above
 ####################
 
+This is a simpler way to say greater than the minimum value. 
+
+@param integer $value 
+
+@param integer $minimum
+
+@returns bool
+
+.. code-block:: bash
+
+    #
+    # Check the current temperature.
+    # 
+    if opal:number_is_above $temp_f 86; then
+        opal:message 'It is hot! A great day to watch a baseball game!'
+    fi
+
 opal:number_at_most
 ###################
+
+This is a simpler way to say less than or equal to the maximum value. 
+
+@param integer $value 
+
+@param integer $maximum
+
+@returns bool
+
+.. code-block:: bash
+
+    #
+    # Check the current temperature.
+    # 
+    if opal:number_at_most $temp_f 32; then
+        opal:message "It's freezing "
+    fi
+
 
 opal:number_is_below
 ####################
 
+This is a simpler way to say less than a maximum value. 
+
+@param integer $value 
+
+@param integer $maximum
+
+@returns bool
+
+.. code-block:: bash
+
+    #
+    # Check the person's height.
+    # 
+    if opal:number_is_below $height_inches 48; then
+        opal:message "You must be at least this tall (48 inches) to ride this ride"
+    fi
+
 opal:number_between
 ###################
+
+Determine if a number is inclusively between a minimum and a maximum value. 
+
+@param integer $value 
+
+@param integer $minimum
+
+@param integer $maximum
+
+@returns bool
+
+.. code-block:: bash
+
+    #
+    # Check the year an album was released.
+    # 
+    if opal:number_between $year_released 1980 1989; then
+        opal:success "The album was released in the best decade"
+    fi
 
 
 opal:command_exists
 ###################
 
+Check that a command exists on the system.
+
+@param string $command_name 
+
+@returns bool
+
+@uses type command to perform the check
+
+.. code-block:: bash
+
+    #
+    # Check if command exists.
+    # 
+    if opal:command_exists $command_name; then
+        opal:success "The command is available. Go ahead and run it"
+    fi
+
 opal:function_exists
 ####################
+
+Check that a bash function is available on the system.
+
+@param string $function_name 
+
+@returns bool
+
+@uses type command to perform the check
+
+.. code-block:: bash
+
+    #
+    # Check the function is loaded into the shell
+    # 
+    if opal:function_exists $function_name; then
+        opal:success "The function is available. Go ahead and run it"
+    fi
 
 Logging
 ^^^^^^^
