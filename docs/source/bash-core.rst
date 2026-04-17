@@ -112,6 +112,33 @@ opal:std_error
     $ opal:std_error "Something went wrong"
 
 
+opal:std_log
+############
+
+    Use this to write a message to Standard Error and to the log. This makes it
+    easier for people to write an error message on the command line.
+
+    @param string $message
+        The user-facing error message 
+
+    @return void
+        The same message but redirected to STDERR
+
+Write a custom log message when your script fails.
+
+.. code-block :: bash
+
+    $ script.sh || opal:std_log "Write a custom log message."
+
+Inside of a function, you might call it like this
+
+.. code-block:: bash
+
+    if opal:is_unset $1; then
+        opal:std_log "You forgot to specify a parameter" 
+        return 1
+    fi
+
 
 opal:is_set
 ###########
