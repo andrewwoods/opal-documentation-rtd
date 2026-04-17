@@ -328,11 +328,74 @@ opal:sleep()
 Conditionals
 ^^^^^^^^^^^^
 
-opal:string_equals
-##################
+Bash treats comparison for strings differently than for numbers. So there are
+different operators that are used.
 
-opal:string_unequal
-###################
+These functions are made to provide wrappers to Bash's handling of equality,
+which is not very intuitive. They're meant to improve the developer experience.
+Part of this effort is to not use abbrevation is function names. This increases
+readability and understanding. For example, the name ``number_at_least`` is a
+simpler way of saying ``greater than or equal to`` without abbreviation. 
+
+
+Bash by default treats strings as case-sensitive.
+
+opal:str_equals
+###############
+
+Provides a function to check for string equality. 
+
+@param string 
+
+@param string 
+
+@returns bool
+
+.. code-block:: bash
+
+    fruit="Apple"
+
+    #
+    # Bash Native logic
+    #
+    if [[ $fruit == "Apple" ]]; then
+        echo "Apple is the fruit of the month" 
+    fi
+
+    #
+    # With Opal, the conditional can now expressed like this
+    #
+    if opal:str_equals "$fruit" "Apple"; then
+        opal:success "Apple is the fruit of the month" 
+    fi
+
+opal:str_unequals
+#################
+
+A common pattern is to use negation to flip the truth of a logicial expression. 
+Borrowing from the previous example, we might write the following
+
+@param string 
+
+@param string 
+
+@returns bool
+
+.. code-block:: bash
+
+    if ! opal:str_equals "$fruit" "Apple"; then
+        opal:failure "Apple is not available" 
+    fi
+
+Opal provides a function to combine that logic into a single function name:
+`str_unequals`. This is in the spirit of Perl's `unless` keyword.
+
+.. code-block:: bash
+
+    if opal:str_unequals "$fruit" "Apple"; then
+        opal:failure "Apple is not available" 
+    fi
+
 
 opal:number_equals
 ##################
