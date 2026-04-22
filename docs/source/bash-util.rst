@@ -18,9 +18,19 @@ file was created.
 
 @return void
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:bash_intro ~/.bashrc
+
+The output is written to the filename passed. Here's an example of the output.
+
+.. code-block:: bash
+
+   #
+   # Generator: Opal <https://github.com/andrewwoods/opal>
+   # Date-Created: 2026 Apr 19 Sun 11:49
+   # Author: your_username 
+   #
 
 
 opal:vim_intro()
@@ -36,19 +46,27 @@ file was created.
 
 @return void
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:bash_intro ~/.vimrc
 
+The output is written to the filename passed. Here's an example of the output.
+
+.. code-block:: vim
+
+    "
+    " Generator: Opal <https://github.com/andrewwoods/opal>
+    " Date-Created: 2026 Apr 19 Sun 11:49
+    " Author: your_username 
+    "
 
 opal:bash_heading_box()
 #######################
 
 Write the section heading box to a file
 
-This is best used in a script for creating new files. The header currently
-only writes the current timestamp to the header, so you know when the
-file was created.
+This utility for creating a section header is best used in a script for
+creating new files.  
 
 @param string $heading
 
@@ -56,7 +74,7 @@ file was created.
 
 @return void
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:bash_heading_box 'My Heading' ~/.bashrc
 
@@ -64,21 +82,15 @@ file was created.
 opal:preamble()
 ###############
 
-Write the system preamble to a file
+Display the system preamble 
 
-This is best used in a script for creating new files. The header currently
-only writes the current timestamp to the header, so you know when the
-file was created.
+Show the user some information to greet them when opening a new terminal.
 
-@param string $heading
+@return string
 
-@param string $filename
+.. code-block:: bash
 
-@return void
-
-.. code-block :: bash
-
-    $ opal:bash_heading_box 'My Heading' ~/.bashrc
+    $ opal:preamble
 
 opal:up()
 #########
@@ -87,7 +99,7 @@ Navigate up the file system a number of directories. Default 1.
 
 Often you want to travel up a numnber of directory levels. 
 
-.. code-block :: bash
+.. code-block:: bash
 
     ~/src/public/opal-documentation-rtd $ opal:up 2
 
@@ -103,7 +115,7 @@ An animated version of echo. Gives the sense of typing the file text to STDOUT.
 
 @see bin/typer
 
-.. code-block :: bash
+.. code-block:: bash
 
    $ opal:type_file filename.txt
 
@@ -117,7 +129,7 @@ An animated version of echo. Gives the sense of typing the text to STDOUT.
 
 @see bin/typer
 
-.. code-block :: bash
+.. code-block:: bash
 
    $ opal:type_line "Hello World"
 
@@ -134,7 +146,7 @@ Sometime you need to create vertical white space.
 
 @return string 
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:spacer 4
 
@@ -147,9 +159,9 @@ opal:filedate_to_day()
 
 Sometimes, you need to know the day of the week for a given date.
 
-Convert the output of `opal:today filename-date` and `opal:today filename-timestamp`
-to a weekday. This is use for when you want to create a report title based on the
-the use of dates.
+Convert the output of ``opal:today filename-date`` and ``opal:today
+filename-timestamp`` to a weekday. This is use for when you want to create a
+report title based on the the use of dates.
 
 
 @param string date 
@@ -157,7 +169,7 @@ the use of dates.
 
 @return string 
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:filedate_to_date 2026-03-25 
     Wed
@@ -170,7 +182,7 @@ Monday is the first day of the current week. Get Monday's date.
 
 @return string 
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:monday_date # The current date is 2026 Mar 25 Wed 17:00
     2026 Mar 23 Mon
@@ -188,7 +200,7 @@ Sunday is the last day of the current week. Get Sunday's date.
 
 @see opal:get_date_format
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:sunday_date # The current datetime is 2026 Mar 25 Wed 17:00
     2026 Mar 29 Sun
@@ -197,9 +209,10 @@ opal:cal3()
 ###########
 
 Display a current 3-month span. The previous month, current month, and the next
-month. The output display horizontally.
+month. The output is displayed vertically. The command ``cal -3`` can be used 
+to display the calendars positioned horizontaly.
 
-.. code-block :: bash
+.. code-block:: bash
 
         February 2026      
     Su Mo Tu We Th Fr Sa  
@@ -231,9 +244,11 @@ opal:ncal3()
 ############
 
 Display a current 3-month span. The previous month, current month, and the next
-month. The output display vertically.
+month. The output is displayed vertically. The command ``ncal -3`` can be used 
+to display the calendars positioned horizontaly.
 
-.. code-block :: bash
+
+.. code-block:: bash
 
     $ opal:ncal3
 
@@ -274,7 +289,7 @@ Greet the user based on the time of day.
 
 @see opal:preamble
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:greeting
     Good afternoon 
@@ -284,9 +299,40 @@ opal:mach()
 
 Disable information about your system.
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:mach
+
+.. code-block:: bash
+
+    Machine information:
+    Darwin Aerilon.local 22.6.0 Darwin Kernel Version 22.6.0: Tue Jul 15 08:22:28 PDT 2025; root:xnu-8796.141.3.713.2~2/RELEASE_X86_64 x86_64
+
+    Users logged on:
+    awoods   console  -  29Mar26 20days -
+    awoods   s000     -  29Mar26 1day  -bash         ˇø    /bin/bash      
+    awoods   s001     -  29Mar26 1day  -bash         ˇø    /bin/bash      
+    awoods   s002     -  07Apr26     - tmux attach -t WRITE
+    awoods   s025     -  Fri14   2days -bash         ˇø    /bin/bash    
+
+    Current date :
+    Sun Apr 19 15:09:42 EDT 2026
+
+    Machine status :
+    15:09  up 20 days, 23:49, 5 users, load averages: 1.49 1.61 1.65
+
+    Filesystem status :
+    Filesystem       Size   Used  Avail Capacity iused       ifree %iused  Mounted on
+    /dev/disk1s4s1  1.8Ti   18Gi  1.4Ti     2%  356882  4290768130    0%   /
+    devfs           201Ki  201Ki    0Bi   100%     696           0  100%   /dev
+    /dev/disk1s2    1.8Ti  4.0Gi  1.4Ti     1%    1392 14840563680    0%   /System/Volumes/Preboot
+    /dev/disk1s6    1.8Ti  4.0Gi  1.4Ti     1%       4 14840563680    0%   /System/Volumes/VM
+    /dev/disk1s5    1.8Ti   74Mi  1.4Ti     1%     538 14840563680    0%   /System/Volumes/Update
+    /dev/disk1s1    1.8Ti  421Gi  1.4Ti    23% 3743229 14840563680    0%   /System/Volumes/Data
+    map auto_home     0Bi    0Bi    0Bi   100%       0           0  100%   /System/Volumes/Data/home
+    /dev/disk1s4    1.8Ti   18Gi  1.4Ti     2%  455010  4290100123    0%   /System/Volumes/Update/mnt1
+
+
 
 User Experience
 ^^^^^^^^^^^^^^^
@@ -296,7 +342,7 @@ opal:country()
 
 Lookup a country name for a given 2-letter or 3-letter country code.
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:country ca
     Looking up CA ...
@@ -307,7 +353,7 @@ opal:define()
 
 Lookup the definitions for an English word using dict.org
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:define computer
 
@@ -321,11 +367,11 @@ By default, the message will say "It is Done!". This is useful when completing
 a long running command, and you don't want to stare at your terminal.
 
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:say_done 
 
-    $ opal:say_done "The scripts has completed" 
+    $ opal:say_done "The script has completed" 
 
 
 
@@ -341,7 +387,7 @@ Note: This doesn't affect the ls command.
 
 @return void
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:show_dotfiles yes 
 
