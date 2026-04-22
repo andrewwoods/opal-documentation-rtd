@@ -37,12 +37,12 @@ Contents
    bash-system
    bash-util
 
+   editors
 
 Outline
 -------
 
 This is a mockup for the Table of Contents
-
 
 
 * Opal Coding Standard
