@@ -38,6 +38,7 @@ Contents
    bash-util
 
    editors
+   git
 
 Outline
 -------
