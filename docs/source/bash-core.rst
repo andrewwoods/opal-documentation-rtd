@@ -2,22 +2,20 @@
 Bash Core
 =========
 
-The `core.bash` function serves as the main Opal file. It's considered the only
-required file. All the others create a nicer experience. When you want to
-create a custom script, and don't need the entire framework, you can include
-only this file.
+`core.bash` serves as the main Opal file. **It's the only required file.** All
+the others create a nicer experience. When you want to create a custom script,
+and don't need the entire framework, you can include only this file.
 
-.. code-block :: bash
+.. code-block:: bash
 
   #!/usr/bin/env bash
   source ~/opal/bash/core.bash
 
 
-
 Export Variables
 ----------------
 
-.. code-block :: bash
+.. code-block:: bash
 
     export OPAL_VERSION="3.0.0-beta"
 
@@ -32,26 +30,32 @@ Export Variables
     export OPAL_LOG_FILE="${OPAL_XDG_STATE_HOME}/error.log"
 
 
+OPAL_DIR
+^^^^^^^^
 
+The `OPAL_DIR` holds the Opal install directory. This should be directly under your `$HOME` directory. Opal was designed so that $HOME/opal is where it resides.
 
 OPAL_CONFIG_DIR
 ^^^^^^^^^^^^^^^
 
-Write a description ofthe OPAL_CONFIG_DIR describing what it does, and why it's
-important.
+The `OPAL_CONFIG_DIR` is a supplemental configuration directory. It's how the
+project can provide support for third party applications. This is a "top
+level" directory, and each supported application has a subdirectory. The
+primary purpose is to allow you to get setup faster by providing a solid,
+simple foundation. Should you find yourself wishing that the configuration was
+different. Don't change these configuration files. Instead, create a copy of
+these files, and put it in your dotfiles project.  
 
 
 Functions
 ---------
 
-The core file contains all the essential functions of the Opal framework.
-The functions in here are the primary code dependency.
-
-The contents of the core.bash are required for Opal. There are several Bash
-files that make up Opal, but core.bash is meant to provide the foundation. One
-reason you might want to use just this file is to create your own Bash app,
-Loading just this file makes it easy for you to create, without having to
-override different parts of the framework. 
+The core file `core.bash` contains all the essential functions of the Opal
+framework. There are several Bash files that make up Opal, but `core.bash` is
+meant to provide the foundation. One reason this is important, is becuase you
+might want to create your own Bash app. Loading just this file makes it easy
+for you to create while keeping things small, without having to override
+different parts of the framework. 
 
 This file is divided into multiple sections. Each sections contains multiple
 functions.
@@ -66,10 +70,11 @@ opal:version()
 
     @return void
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:version
-    Opal version: 3.0.0-beta
+    Opal version: 3.0.0-beta-0406
+    Bash version: 3.2.57(1)-release
 
 
 opal:about()
@@ -79,10 +84,11 @@ opal:about()
 
     @return void
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:about
     Opal version: 3.0.0-beta
+    Bash version: 3.2.57(1)-release
     
     Opal is a command line framework. It's a foundation to provide a consistent
     foundation across machines and users. It's meant to be extended. Version 3
@@ -91,7 +97,7 @@ opal:about()
     For the most up-to-date version, and the full documentation, visit the
     Github repo at https://github.com/andrewwoods/opal
 
-    Copyright (C) 2023-2025 Andrew Woods
+    Copyright (C) 2023-2026 Andrew Woods
 
 
 
@@ -107,7 +113,7 @@ opal:std_error
     @return void
         The same message but redirected to STDERR
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:std_error "Something went wrong"
 
@@ -126,7 +132,7 @@ opal:std_log
 
 Write a custom log message when your script fails.
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ script.sh || opal:std_log "Write a custom log message."
 
@@ -263,7 +269,7 @@ opal:label()
 
 .. code-block:: bash
 
-    opal:label "This is your informational message"
+    opal:label "This is your label"
 
 opal:speak()
 ############
@@ -316,7 +322,7 @@ opal:sleep()
     @return string
         The same message wrapped in terminal escape codes
 
-.. code-block :: bash
+.. code-block:: bash
 
     $ opal:sleep
     Using default value.
