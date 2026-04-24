@@ -37,6 +37,7 @@ Contents
    bash-system
    bash-util
 
+   data
    editors
    etc
    git
