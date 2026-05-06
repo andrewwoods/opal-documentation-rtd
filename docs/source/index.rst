@@ -35,6 +35,7 @@ Contents
    bash-directory
    bash-file-system
    bash-prompts
+   bash-strings
    bash-system
    bash-util
 
