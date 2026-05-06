@@ -9,12 +9,13 @@ many aliases defined for your convenience, but this list is not meant to be
 comprehensive. Please use these examples to help define your own. Copy it into
 your custom dotfiles, rather than updating Opal.
 
-When you ran the install script, a clocks alias was added to your ``$HOME/.bashrc`` file.
-That was provided as a starting point. You should update it to meet your needs.
+When you ran the install script, a clocks alias was added to your
+``$HOME/.bashrc`` file. That was provided as a starting point. You should
+update it to meet your needs.
 
 This code shows a small sample of what's available.
 
-.. code-block :: bash
+.. code-block:: bash
 
     alias utc="TZ=UTC date '+%c -- Universal Time'"
     alias eastern="TZ=US/Eastern date '+%c -- US Eastern'"
@@ -39,6 +40,7 @@ In addition to individual clocks, there are several regional aliases.
     alias asia_clocks="hong_kong; shanghai; tokyo; saigon; jerusalem; baghdad"
     alias pac_clocks="tahiti; honolulu; perth; guam; opal:spacer; brisbane; adelaide; melbourne; sydney; auckland"
 
+
 There's an alias for ``us_clocks`` but there isn't one for Canada-only
 timezones. So let's make our own now, eh?
 
@@ -47,9 +49,9 @@ timezones. So let's make our own now, eh?
 
    alias canada_clocks="vancouver; winnipeg; toronto"
 
-When you execute the canada_clocks alias, you'll see output like this:
+When you execute the ``canada_clocks`` alias, you'll see output like this:
 
-.. code-block :: bash
+.. code-block:: text
 
     Wed Oct 22 14:13:01 2025 -- Canada, Vancouver
     Wed Oct 22 16:13:01 2025 -- Canada, Winnipeg
