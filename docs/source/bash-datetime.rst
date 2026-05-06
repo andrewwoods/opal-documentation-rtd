@@ -7,6 +7,34 @@ Time is a difficult topic for developers. While we can't solve every
 time-related problem, we can make it a bit easier. A set of functions work
 together to simplify the experience.
 
+If you're looking for a way to see an example of all the supported formats, run
+the ``today.bash`` script. It's located in the ~/opal/bin directory, so it's already
+in your PATH.
+
+.. code-block:: text
+
+   $ today.bash
+   
+    unix=1777160478
+    opal-date=2026 Apr 25 Sat
+    opal-datetime=2026 Apr 25 Sat 19:41
+    opal-timestamp=2026 Apr 25 Sat 19:41:18-0400
+    iso-date=2026-04-25
+    iso-datetime=2026-04-25T19:41-0400
+    iso-timestamp=2026-04-25T19:41:18-0400
+    world-date=25/04/2026
+    world-datetime=25/04/2026 19:41
+    world-timestamp=25/04/2026 19:41:18-0400
+    us-date=04/25/2026
+    us-datetime=04/25/2026 7:41 PM
+    us-timestamp=04/25/2026 7:41:18 PM -0400
+    usa-date=April 25, 2026
+    usa-datetime=April 25, 2026 7:41 PM
+    usa-timestamp=April 25, 2026 7:41:18 PM EDT
+    filename-date=2026-04-25
+    filename-datetime=2026-04-25-19-41
+    filename-timestamp=2026-04-25-19-41-18
+
 opal:today
 ----------
 
@@ -18,8 +46,8 @@ opal:today
 
     @uses opal:get_date_format
 
-The `opal:today` function displays the current date/time based on the format.
-By default, it uses the `opal-datetime` format. However, you specify a format
+The ``opal:today`` function displays the current date/time based on the format.
+By default, it uses the ``opal-datetime`` format. However, you specify a format
 name as the first argument.
 
 One common value you'll want to know, is the current time in UNIX time. The
@@ -110,23 +138,53 @@ The supported date styles are as follows:
 * iso
 * world
 * us
-* cmos
+* usa
 * filename
 
-The name ``unix`` is a singular format, as it works differently from
-the others. It returns the number of seconds since the UNIX epoch 1970-01-01T00:00:00-0000
+The name ``unix`` is a singular format, as it works differently from the
+others. It returns the number of seconds since the UNIX epoch
+1970-01-01T00:00:00-0000.
 
-The Chicago Manual of Style (CMOS) is used by various industries for their publications. The `cmos` format refers to the format. If you dislike the ambiguity of the `us` style, I encourage you to try the `cmos` date style.   
+The ``us`` date formats provide dates in the numeric ``mm/dd/yyyy`` format.
+This is common in the United States, but this can cause confusion for 
+an international audience.
 
-The following example uses the Opal project preferred format. Yes, I'm aware of
-the `XKCD commentary about standards <https://xkcd.com/927/>`_ but there is a
-good reason for this format. Numeric date formats suffer from confusion between
-which numbers represent the month or the day. The ``opal`` style start the date
-with the year, uses the month abbreviation instead of numeric value, and
-includes the weekday abbreviation. The result is a date value of a consistent
-length no matter the time of year, for a given precision.
+.. code-block:: text
 
-.. code-block :: bash
+    $ today us-date
+    04/25/2026
+
+    $ today us-datetime
+    04/25/2026  8:08 PM
+
+    $ today us-timestamp
+    04/25/2026  8:08:13 PM -0400
+
+If you dislike the ambiguity of the ``us`` numeric style, the ``usa`` date
+style provides clarity by spelling out the month name.   
+
+.. code-block:: text
+
+    $ today usa-date
+    April 25, 2026
+
+    $ today usa-datetime
+    April 25, 2026  7:25 PM
+
+    $ today usa-timestamp
+    April 25, 2026  7:25:55 PM EDT
+
+
+The following example uses the *Opal project preferred format*. Yes, I'm aware
+of the `XKCD commentary about standards <https://xkcd.com/927/>`_ but there is
+a good reason for this format. The Opal format is year first, which provides
+same logical ordering as the ISO format, but displays in a more friendly
+manner. The ``opal`` date style starts with the year, followed by the month
+abbreviation, then the day of the month which includes the weekday
+abbreviation. The result is a date value of a consistent length no matter the
+time of year, for a given precision.
+
+.. code-block:: text
 
     $ opal:today opal-date
     2025 Oct 22 Wed
