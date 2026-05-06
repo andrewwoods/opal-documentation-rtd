@@ -27,14 +27,23 @@ This code shows a small sample of what's available.
     alias winnipeg="TZ=America/Winnipeg date '+%c -- Canada, Winnipeg'"
     alias mexico_city="TZ=America/Mexico_City date '+%c -- Mexico, Mexico City'"
     alias us_clocks="eastern; central; mountain; arizona; pacific"
-    alias na_clocks="eastern; central; mountain; arizona; pacific; _n; toronto; mexico_city; winnipeg; vancouver"
+
+In addition to individual clocks, there are several regional aliases.
+
+.. code-block:: bash
+
+    alias na_clocks="eastern; central; mountain; arizona; pacific; opal:spacer; toronto; mexico_city; winnipeg; vancouver"
+    alias sa_clocks="santiago; bogota; buenos_aires; sao_paulo"
+    alias af_clocks="cairo; casablanca; freetown; mogadishu; nairobi; tripoli; tunis"
+    alias eu_clocks="cardiff; dublin; london; lisbon; paris; berlin; rome; zurich; madrid; belgrade; moscow; kyiv"
+    alias asia_clocks="hong_kong; shanghai; tokyo; saigon; jerusalem; baghdad"
+    alias pac_clocks="tahiti; honolulu; perth; guam; opal:spacer; brisbane; adelaide; melbourne; sydney; auckland"
+
+There's an alias for ``us_clocks`` but there isn't one for Canada-only
+timezones. So let's make our own now, eh?
 
 
-There's an alias for `us_clocks` but there isn't one for Canada-only timezones. 
-So let's make our own now, eh?
-
-
-.. code-block :: bash
+.. code-block:: bash
 
    alias canada_clocks="vancouver; winnipeg; toronto"
 
