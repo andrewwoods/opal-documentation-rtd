@@ -54,7 +54,7 @@ One common value you'll want to know, is the current time in UNIX time. The
 ``opal:today`` function takes a single parameter, which is the name of the
 format. 
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:today unix
     1761157954
@@ -63,7 +63,7 @@ The other format names follow a pattern. An example is shown here. The
 available formats and precision values are defined in the
 ``opal:get_date_format`` function.
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:today unix 
     1761163284
@@ -96,9 +96,9 @@ opal:someday
 
 The ``opal:someday`` function is a companion to the ``opal:today`` function. When
 you already have a UNIX timestamp, use ``opal:someday`` to display the
-corresponding date in your preferred format. If the second parameter is not passed, the `opal:datetime` format will be used.
+corresponding date in your preferred format. If the second parameter is not passed, the ``opal:datetime`` format will be used.
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:someday 1761163284 iso-timestamp
     2025-10-22T16:01:24-0400
@@ -107,17 +107,18 @@ corresponding date in your preferred format. If the second parameter is not pass
 opal:get_date_format
 --------------------
 
+    The ``opal:get_date_format`` provides a lookup to retrieve a date format by name.
+    There are many formats for you to choose from. It provides some logic for the
+    today and someday functions. 
+
     @param string $formatname
         the name containing the date style and precision separated by a hypen e.g. opal-datetime
 
     @return string $duration
         The date formatted according to the given style and format
 
-    The `opal:get_date_format` provides a lookup to retrieve a date format by name.
-    There are many formats for you to choose from. It provides some logic for the
-    today and someday functions. 
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:today opal-date
     2025 Oct 22 Wed
@@ -195,17 +196,17 @@ time of year, for a given precision.
     $ opal:today opal-timestamp
     2025 Oct 22 Wed 14:51:53-0400
 
-Looking to use a day-first format? Try the `world` style
+Looking to use a day-first format? Try the ``world`` style
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:today world-date
     22/10/2025
 
-    $ opal:today opal-datetime
+    $ opal:today world-datetime
     22/10/2025 14:51
 
-    $ opal:today opal-timestamp
+    $ opal:today world-timestamp
     22/10/2025 14:51:53-0400
 
 
@@ -225,10 +226,10 @@ opal:duration
     @return string $duration
         A report of the calculation
 
-The `opal:duration` tells you the difference in time between two unix
+The ``opal:duration`` tells you the difference in time between two unix
 timestamps.
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:duration 1761163284 1761165351
     0 years 0 days 0 hours 34 minutes 27 seconds
@@ -252,7 +253,7 @@ opal:interval_to_seconds
     @return integer $seconds
         The calculation result in seconds
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:interval_to_seconds days 2
     172800
@@ -269,10 +270,8 @@ opal:epoch
     @return integer $seconds
         The date represented in UNIX epoch seconds
 
-.. code-block :: bash
+.. code-block:: text
 
     $ opal:epoch 2026-03-17 
-    1773763125
-
-
+    1773720000
 
