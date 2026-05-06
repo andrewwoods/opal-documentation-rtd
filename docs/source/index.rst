@@ -34,6 +34,7 @@ Contents
    bash-developer 
    bash-directory
    bash-file-system
+   bash-prompts
    bash-system
    bash-util
 
