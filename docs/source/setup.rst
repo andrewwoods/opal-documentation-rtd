@@ -1,7 +1,18 @@
 Setup
 =====
 
-.. _installation:
+Opal is designed to be simple to use, and easily extendable. The heart of Opal
+is Bash. There's also some value for Neovim, Vim, and Git users that one can
+opt into. If you're someone that loves to live on the command line, then it
+should be easy to create the experience you want for yourself. Natively, Bash
+doesn't make it easy. So Opal has a wealth of functions to provide things you
+might want.
+
+Upon installation, a ``~/.bashrc`` and  a ``~/.bash_profile`` will be created
+for you. The recommendation is to use the these versions as a foundation and
+copy commands from your original versions into these. You might find that some
+of the things, you've previously added to your dotfiles are no longer needed.
+
 
 About the Installation
 ----------------------
