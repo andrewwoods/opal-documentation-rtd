@@ -26,8 +26,8 @@ Contents
 
    setup
    bash
-   bash-core
    bash-aliases
+   bash-core
    bash-clocks
    bash-datetime
 
