@@ -29,13 +29,18 @@ opal:extract
 
     "un-compress" a file from a variety of common formats
 
+    There are multiple supported file types: ``.tar.bz2``, ``.tar.gz``,
+    ``.bz2``, ``.rar``, ``.gz``, ``.tar``, ``.tbz2``, ``.tgz``, ``.zip``,
+    ``.Z``, and ``.7z``. The actual support is based on the commands that
+    you have installed.
+
     @param String $filename 
       must be a common compressed file type like ZIP or Tar
 
 .. code-block:: bash
 
-    # Display lines 90 - 110. Line 100 is the middle line of content
-    $ opal:numseg error.log 100
+    # 
+    $ opal:extract wordpress.tar.gz 
     
     # Display lines 100 through 140.
     $ opal:numseg error.log 100 140
@@ -48,15 +53,18 @@ opal:numseg
     
     When only the start_line is specified, a range of 10 lines before and after
     that line will be numbered and displayed. when start_line and end_line are
-    specified, those lines and all those between will be numbered and displayed
+    specified, those lines and all those between will be numbered and displayed.
+    This is great for displaying a small section of a file, so one can discuss
+    a section of text or code without being tied to your editor.
     
     @param String $filename 
       the text file with the content
 
     @param Integer $start
+        The initial line number of the segment to display   
 
     @param Integer $end
-        Optional. The last
+        Optional. The last line number of the segment to display.
     
     Example:
 
@@ -82,11 +90,11 @@ opal:seg
       the text file with the content
 
     @param integer $start
+        The initial line number of the segment to display   
 
     @param integer $end
-        Optional. The last line of the range
+        Optional. The last line number of the segment to display.
     
-    Example:
 
 .. code-block:: bash
 
@@ -102,10 +110,13 @@ opal:locate
 
     Display the file path and line number where the function is defined.
 
+    Discover where you've defined a bash function. 
+
     @param string $function_name
       the name of the function you want to find  
 
-    @return 
+    @return string
+      The function name, line number, and filepath
 
 .. code-block:: bash
 
@@ -122,11 +133,13 @@ opal:describe
     @param string $function_name
       the name of the function you want to display  
 
+    @return string
+      the entire text of a function
 
 .. code-block:: bash
 
     # Learn where the opal:today function is defined. 
-    $ opal:locate opal:today 
+    $ opal:describe opal:today 
 
 opal:show 
 ---------
@@ -163,6 +176,8 @@ opal:swap
     @param string $file_two
       the name of the second file to swap  
 
+    @return void
+
 .. code-block:: bash
 
     # Learn where the opal:today function is defined. 
@@ -185,7 +200,7 @@ opal:touchx
 
 .. code-block:: bash
 
-    # Create a GIt Keep file and make it executable.
+    # Create a Git Keep file and make it executable.
     $ opal:touchx .gitkeep
 
     # Create a PHPinfo file file and make it executable.
@@ -194,20 +209,18 @@ opal:touchx
 opal:truncate
 -------------
 
-    Remove the contents of a file
+    Remove the contents of a file without deleting the file.
 
     There are times when you want the file to remain, but only clear out
     the contents. This is useful when dealing with large log files 
     taking up too much space.
 
     @param string $filename
-      the name of the file to create
+      the name of the file to from which to remove the contents
 
 .. code-block:: bash
 
     # Remove the contents of a large file.
     $ opal:truncate error.log 
-
-
 
 
