@@ -31,7 +31,7 @@ opal:ps1_brief
 This style of prompt is quite common. It shows the username, name, and the base
 directory. The home directory is displayed as a ``~`` (tilde). If you're a Git
 user, the branch name is also included after the directory. There's a design assumption that a dark
-terminal theme is being used when color is past as an argument. The default is
+terminal theme is being used when color is passed as an argument. The default is
 to use text formatting like bold or underline . 
 
 @param style Optional.
@@ -180,9 +180,9 @@ PS4: The Debug Prompt
 
 The debug prompt, helps you understand what is happening when scripts run. It
 gets displayed when execution trace is enabled. Every line of the script is
-displayed to you the line of code it's about to execute. Then it executes, and
-displays the output. How much detail is in the prompt is up to you. Opal offers
-you three PS4 prompt styles.
+displayed to you, immediately before the line of code is about to execute. Then
+it executes, and displays the output. The amount of detail is in the prompt is
+up to you. Opal offers you three PS4 prompt styles.
 
 
 

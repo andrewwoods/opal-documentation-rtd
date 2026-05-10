@@ -2,7 +2,7 @@
 Bash Core
 =========
 
-`core.bash` serves as the main Opal file. **It's the only required file.** All
+The `core.bash` file serves as the main Opal file. **It's the only required file.** All
 the others create a nicer experience. When you want to create a custom script,
 and don't need the entire framework, you can include only this file.
 

@@ -44,32 +44,3 @@ Contents
    etc
    git
 
-Outline
--------
-
-This is a mockup for the Table of Contents
-
-
-* Opal Coding Standard
-* Scripting Bash
-
-  - Standard Error
-  - Conditionals
-  - Equality
-  - Existence Checks
-  - Logging
-  - User Experience
-  - Dates and Formats
-
-
-* Editors
-
-  - Neovim
-  - Vim
-
-* Git
-* Data
-* Themes
-* Frequently Asked Questions (FAQ)
-* Help
-
