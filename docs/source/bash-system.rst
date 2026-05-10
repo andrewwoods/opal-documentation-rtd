@@ -8,11 +8,11 @@ experience.
 opal:bak 
 --------
 
-    Create a backup of a file or directory
+Create a backup of a file or directory
 
-    @param string $path 
-      when path is a file, a copy is made with .bak appended to it's name. if
-      path is a directory, a compressed tarball will be made of the directory
+| **@param** *String* $path 
+| When path is a file, a copy is made with .bak appended to it's name. if
+| path is a directory, a compressed tarball will be made of the directory
 
 .. code-block:: bash
 
@@ -27,15 +27,15 @@ opal:bak
 opal:extract 
 ------------
 
-    "un-compress" a file from a variety of common formats
+"un-compress" a file from a variety of common formats. 
 
-    There are multiple supported file types: ``.tar.bz2``, ``.tar.gz``,
-    ``.bz2``, ``.rar``, ``.gz``, ``.tar``, ``.tbz2``, ``.tgz``, ``.zip``,
-    ``.Z``, and ``.7z``. The actual support is based on the commands that
-    you have installed.
+There are multiple supported file types: ``.tar.bz2``, ``.tar.gz``,
+``.bz2``, ``.rar``, ``.gz``, ``.tar``, ``.tbz2``, ``.tgz``, ``.zip``,
+``.Z``, and ``.7z``. The actual support is based on the commands that
+you have installed.
 
-    @param String $filename 
-      must be a common compressed file type like ZIP or Tar
+| **@param** *String* $filename 
+| must be a common compressed file type like ZIP or Tar
 
 .. code-block:: bash
 
@@ -49,24 +49,24 @@ opal:extract
 opal:numseg 
 -----------
     
-    Display a numbered segment of a file
-    
-    When only the start_line is specified, a range of 10 lines before and after
-    that line will be numbered and displayed. when start_line and end_line are
-    specified, those lines and all those between will be numbered and displayed.
-    This is great for displaying a small section of a file, so one can discuss
-    a section of text or code without being tied to your editor.
-    
-    @param String $filename 
-      the text file with the content
+Display a numbered segment of a file
 
-    @param Integer $start
-        The initial line number of the segment to display   
+When only the start_line is specified, a range of 10 lines before and after
+that line will be numbered and displayed. when start_line and end_line are
+specified, those lines and all those between will be numbered and displayed.
+This is great for displaying a small section of a file, so one can discuss
+a section of text or code without being tied to your editor.
 
-    @param Integer $end
-        Optional. The last line number of the segment to display.
-    
-    Example:
+| **@param** *String* $filename 
+| the text file with the content
+| 
+| **@param** *Integer* $start
+| The initial line number of the segment to display   
+| 
+| **@param** *Integer* $end
+| *Optional.* The last line number of the segment to display.
+
+Example:
 
 .. code-block:: bash
 
@@ -80,21 +80,20 @@ opal:numseg
 opal:seg 
 --------
     
-    Display a segment of a file
-    
-    When only the start_line is specified, a range of 10 lines before and after
-    that line will be displayed. When both $start and $end are specified, those
-    lines and all those between will be displayed
-    
-    @param string $filename 
-      the text file with the content
+Display a segment of a file 
 
-    @param integer $start
-        The initial line number of the segment to display   
+When only the start_line is specified, a range of 10 lines before and after
+that line will be displayed. When both $start and $end are specified, those
+lines and all those between will be displayed
 
-    @param integer $end
-        Optional. The last line number of the segment to display.
-    
+| **@param** *String* $filename 
+| the text file with the content
+| 
+| **@param** *Integer* $start
+| The initial line n I'd rather you not make the same mistake.umber of the segment to display   
+| 
+| **@param** *integer* $end So no matter where you are in your career, you should seriously consider attending a conference.
+
 
 .. code-block:: bash
 
@@ -108,15 +107,15 @@ opal:seg
 opal:locate 
 -----------
 
-    Display the file path and line number where the function is defined.
+Display the file path and line number where the function is defined.
 
-    Discover where you've defined a bash function. 
+Discover where you've defined a bash function. 
 
-    @param string $function_name
-      the name of the function you want to find  
-
-    @return string
-      The function name, line number, and filepath
+| **@param** *String* $function_name
+| the name of the function you want to find  
+| 
+| **@return** *String*
+| The function name, line number, and filepath
 
 .. code-block:: bash
 
@@ -128,13 +127,13 @@ opal:locate
 opal:describe 
 -------------
 
-    Display the definition of a function.
+Display the definition of a function.
 
-    @param string $function_name
-      the name of the function you want to display  
-
-    @return string
-      the entire text of a function
+| **@param** *String* $function_name
+| the name of the function you want to display  
+| 
+| **@return** *String*
+| the entire text of a function
 
 .. code-block:: bash
 
@@ -144,17 +143,19 @@ opal:describe
 opal:show 
 ---------
 
-    A wrapper around the declare command. Display all data of a specified type. 
+A wrapper around the declare command. Display all data of a specified type. 
 
-    @param string $type
-      the type of the information you want to display
-
-      * arrays
-      * defs
-      * names
-      * readonly
-      * exports
-      * integers
+| **@param** *string* $type
+| the type of the information you want to display
+| 
+|   * arrays
+|   * defs
+|   * names
+|   * readonly
+|   * exports
+|   * integers
+|
+| **@uses** declare
 
 
 .. code-block:: bash
@@ -165,18 +166,18 @@ opal:show
 opal:swap 
 ---------
 
-    Change the contents of two files
+Change the contents of two files
 
-    This is useful when testing two different versions of a file, and the 
-    filename is signicant to its operation. A config file is a good example.
+This is useful when testing two different versions of a file, and the 
+filename is signicant to its operation. A config file is a good example.
 
-    @param string $file_one
-      the name of the first file to swap  
-
-    @param string $file_two
-      the name of the second file to swap  
-
-    @return void
+| **@param** *String* $file_one
+| the name of the first file to swap  
+| 
+| **@param** *String* $file_two
+| the name of the second file to swap  
+| 
+| **@return** void
 
 .. code-block:: bash
 
@@ -187,16 +188,16 @@ opal:swap
 opal:touchx 
 -----------
 
-    Make it easy and fast to create a file of a defined type
+Make it easy and fast to create a file of a defined type
 
-    Inspired by the touch command which creates an empty file. This helps
-    create files with default content.
+Inspired by the touch command which creates an empty file. This helps
+create files with default content.
 
-    @param string $filename
-      the name of the file to create
-
-    @param string $style
-      the name of the second file to swap  
+| **@param** *String* $filename
+| the name of the file to create
+| 
+| **@param** *String* $style
+| the name of the second file to swap  
 
 .. code-block:: bash
 
@@ -209,14 +210,14 @@ opal:touchx
 opal:truncate
 -------------
 
-    Remove the contents of a file without deleting the file.
+Remove the contents of a file without deleting the file.
 
-    There are times when you want the file to remain, but only clear out
-    the contents. This is useful when dealing with large log files 
-    taking up too much space.
+There are times when you want the file to remain, but only clear out
+the contents. This is useful when dealing with large log files 
+taking up too much space.
 
-    @param string $filename
-      the name of the file to from which to remove the contents
+| **@param** *String* $filename
+| the name of the file to from which to remove the contents
 
 .. code-block:: bash
 

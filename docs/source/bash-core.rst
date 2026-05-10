@@ -6,7 +6,7 @@ Bash Core
 the others create a nicer experience. When you want to create a custom script,
 and don't need the entire framework, you can include only this file.
 
-.. code-block:: bash
+.. code:: bash
 
   #!/usr/bin/env bash
   source ~/opal/bash/core.bash
@@ -63,12 +63,12 @@ functions.
 General
 ^^^^^^^
 
-opal:version()
-##############
+opal:version
+############
 
-    Display the current version of the Opal framework. Uses the OPAL_VERSION variable.
+Display the current version of the Opal framework. Uses the OPAL_VERSION variable.
 
-    @return void
+| **@output** *String*
 
 .. code-block:: bash
 
@@ -77,12 +77,13 @@ opal:version()
     Bash version: 3.2.57(1)-release
 
 
-opal:about()
-############
 
-    Display notice about what Opal is, where to find the repo, and copyright notice.
+opal:about
+##########
 
-    @return void
+Display notice about what Opal is, where to find the repo, and copyright notice.
+
+| **@output** *String*
 
 .. code-block:: bash
 
@@ -100,18 +101,17 @@ opal:about()
     Copyright (C) 2023-2026 Andrew Woods
 
 
-
 opal:std_error
 ##############
 
-    Use this to write a message to Standard Error. This makes it easier for
-    people to write an error message that can be redirected.
+Use this to write a message to Standard Error. This makes it easier for
+people to write an error message that can be redirected.
 
-    @param string $message
-        The user-facing error message 
-
-    @return void
-        The same message but redirected to STDERR
+| **@param** *String* $message
+| The user-facing error message 
+|
+| **@output** *String* 
+| The same message but redirected to STDERR
 
 .. code-block:: bash
 
@@ -121,14 +121,17 @@ opal:std_error
 opal:std_log
 ############
 
-    Use this to write a message to Standard Error and to the log. This makes it
-    easier for people to write an error message on the command line.
+Use this to write a message to Standard Error and to the log. This makes it
+easier for people to write an error message on the command line.
 
-    @param string $message
-        The user-facing error message 
+| **@param** *String* $message
+| The user-facing error message 
+| 
+| **@output** *String*
+| The same message but redirected to STDERR
+|
+| **@return** ``0 | 1``
 
-    @return void
-        The same message but redirected to STDERR
 
 Write a custom log message when your script fails.
 
@@ -149,16 +152,16 @@ Inside of a function, you might call it like this
 opal:is_set
 ###########
 
-    Check to see if a value is present. 
+Check to see if a value is present. 
 
-    This is a wrapper function for Bash's ``-n`` check. The value has a length
-    greater than zero.  
-    
+This is a wrapper function for Bash's ``-n`` check. The value has a length
+greater than zero.  
 
-    @param string|int $value
-        The user's content
 
-    @return bool
+| **@param** *String | Int* $value
+|     The user's content
+| 
+| **@output** *bool*
         
 .. code-block:: bash
 
@@ -172,14 +175,14 @@ opal:is_set
 opal:is_unset
 #############
 
-    Check to see if a value is not present. 
+Check to see if a value is not present. 
 
-    This is a wrapper function for Bash's `-z` check. A null or empty string will return true.
+This is a wrapper function for Bash's `-z` check. A null or empty string will return true.
 
-    @param string|int $value
-        The user's content 
-
-    @return bool
+| **@param** *String | Int* $value
+| The user's content 
+| 
+| **@output** bool
 
 .. code-block:: bash
 
@@ -191,15 +194,15 @@ opal:is_unset
 opal:is_empty
 #############
 
-    An enhancement of opal:is_unset
+An enhancement of opal:is_unset
 
-    A null or empty string will return true. This function additionally trims
-    whitespace from both ends of the input for comparison. So a string
-    consisting entirely of whitespace will evaluate true.  
+A null or empty string will return true. This function additionally trims
+whitespace from both ends of the input for comparison. So a string
+consisting entirely of whitespace will evaluate true.  
 
-    @param string $value
-
-    @return bool
+| **@param** *string* $value
+| 
+| **@output** *bool*
 
 .. code-block:: bash
 
@@ -212,13 +215,13 @@ opal:is_empty
 opal:success()
 ##############
 
-    Write a success message written in a bright green color. 
+Write a success message written in a bright green color. 
 
-    @param string $message
-        The user-facing error message 
-
-    @return string
-        The same message wrapped in terminal escape codes
+| **@param** *String* $message
+| The user-facing error message 
+| 
+| **@output** *string*
+| The same message wrapped in terminal escape codes
 
 .. code-block:: bash
 
@@ -228,13 +231,13 @@ opal:success()
 opal:failure()
 ##############
 
-    Write a failure message written in a bright red color. 
+Write a failure message written in a bright red color. 
 
-    @param string $message
-        The user-facing error message 
-
-    @return string
-        The same message wrapped in terminal escape codes
+| **@param** *String* $message
+| The user-facing error message 
+| 
+| **@output** *String*
+| The same message wrapped in terminal escape codes
 
 .. code-block:: bash
 
@@ -243,13 +246,13 @@ opal:failure()
 opal:message()
 ##############
 
-    Write a informational message written in a bright cyan color. 
+Write a informational message written in a bright cyan color. 
 
-    @param string $message
-        The user-facing info message 
-
-    @return string
-        The same message wrapped in terminal escape codes
+| **@param** *String* $message
+| The user-facing info message 
+| 
+| **@output** *String*
+| The same message wrapped in terminal escape codes
 
 .. code-block:: bash
 
@@ -259,13 +262,13 @@ opal:message()
 opal:label()
 ############
 
-    Write a label written in a bright yellow color. 
+Write a label written in a bright yellow color. 
 
-    @param string $message
-        The user-facing error message 
-
-    @return string
-        The same message wrapped in terminal escape codes
+| **@param** *String* $message
+| The user-facing error message 
+| 
+| **@output** *String*
+| The same message wrapped in terminal escape codes
 
 .. code-block:: bash
 
@@ -274,15 +277,15 @@ opal:label()
 opal:speak()
 ############
 
-    Read out loud a string of text. Assumes the ``say`` command is installed. 
+Read out loud a string of text. Assumes the ``say`` command is installed. 
 
-    @param string $message
-        The user-facing content
-
-    @return string
-        The same message wrapped in terminal escape codes
-    
-    @uses say
+| **@param** *String* $message
+| The user-facing content
+| 
+| **@output** *String*
+| The same message wrapped in terminal escape codes
+| 
+| **@uses** say
 
 .. code-block:: bash 
 
@@ -291,15 +294,15 @@ opal:speak()
 opal:ask()
 ##########
 
-    Prompt the user with a statement and receive their input
-
-    @param string $prompt
-        What is your request of the user
-
-    @return string
-        the user input
-
-    @uses opal:label
+| Prompt the user with a statement and receive their input
+| 
+| **@param** *String* $prompt
+|     What is your request of the user
+| 
+| **@output** *String*
+|     the user input
+| 
+| **@uses** opal:label
 
 .. code-block:: bash
 
@@ -310,17 +313,16 @@ opal:ask()
 opal:sleep()
 ############
 
-    Pause execution for a limited number of seconds. Default is 5 seconds.  
+Pause execution for a limited number of seconds. Default is 5 seconds.  
 
-    This wraps the standard sleep command. The benefit is to tell you how long
-    it will sleep. It also prevents execution from sleeping forever, by ensuring
-    a default value is provided.
+This wraps the standard sleep command. The benefit is to tell you how long
+it will sleep. It also prevents execution from sleeping forever, by ensuring
+a default value is provided.
 
-    @param int $seconds
-        
-
-    @return string
-        The same message wrapped in terminal escape codes
+| **@param** *int* $seconds
+| 
+| **@output** *string*
+| The same message wrapped in terminal escape codes
 
 .. code-block:: bash
 
@@ -351,11 +353,11 @@ opal:str_equals
 
 Provides a function to check for string equality. 
 
-@param string 
-
-@param string 
-
-@returns bool
+| **@param** *string* 
+| 
+| **@param** *string* 
+| 
+| **@output** *bool*
 
 .. code-block:: bash
 
@@ -381,11 +383,11 @@ opal:str_unequals
 A common pattern is to use negation to flip the truth of a logicial expression. 
 Borrowing from the previous example, we might write the following
 
-@param string 
-
-@param string 
-
-@returns bool
+| **@param** *string* 
+| 
+| **@param** *string* 
+| 
+| **@output** *bool*
 
 .. code-block:: bash
 
@@ -408,11 +410,11 @@ opal:number_equals
 
 Check for the equality of two numbers.
 
-@param integer 
-
-@param integer 
-
-@returns bool
+| **@param** *integer* 
+| 
+| **@param** *integer* 
+| 
+| **@output** bool
 
 .. code-block:: bash
 
@@ -441,11 +443,11 @@ opal:number_at_least
 The name `number_at_least` is a simpler way of saying `greater than or equal to`,
 and without using an abbreviation. 
 
-@param integer $value 
-
-@param integer $minimum
-
-@returns bool
+| **@param** *Integer* $value 
+| 
+| **@param** *Integer* $minimum
+| 
+| **@output** *Bool*
 
 .. code-block:: bash
 
@@ -462,11 +464,11 @@ opal:number_is_above
 
 This is a simpler way to say greater than the minimum value. 
 
-@param integer $value 
-
-@param integer $minimum
-
-@returns bool
+| **@param** *Integer* $value 
+| 
+| **@param** *Integer* $minimum
+| 
+| **@output** *Bool*
 
 .. code-block:: bash
 
@@ -482,11 +484,11 @@ opal:number_at_most
 
 This is a simpler way to say less than or equal to the maximum value. 
 
-@param integer $value 
-
-@param integer $maximum
-
-@returns bool
+| **@param** *Integer* $value 
+| 
+| **@param** *Integer* $maximum
+| 
+| **@output** *Bool*
 
 .. code-block:: bash
 
@@ -503,11 +505,11 @@ opal:number_is_below
 
 This is a simpler way to say less than a maximum value. 
 
-@param integer $value 
-
-@param integer $maximum
-
-@returns bool
+| **@param** *Integer* $value 
+| 
+| **@param** *Integer* $maximum
+| 
+| **@output** *Bool*
 
 .. code-block:: bash
 
@@ -523,13 +525,13 @@ opal:number_between
 
 Determine if a number is inclusively between a minimum and a maximum value. 
 
-@param integer $value 
-
-@param integer $minimum
-
-@param integer $maximum
-
-@returns bool
+| **@param** *Integer* $value 
+| 
+| **@param** *Integer* $minimum
+| 
+| **@param** *Integer* $maximum
+| 
+| **@output** *Bool*
 
 .. code-block:: bash
 
@@ -546,11 +548,11 @@ opal:command_exists
 
 Check that a command exists on the system.
 
-@param string $command_name 
-
-@returns bool
-
-@uses type command to perform the check
+| **@param** *String* $command_name 
+| 
+| **@output** *Bool*
+| 
+| **@uses** ``type`` command to perform the check
 
 .. code-block:: bash
 
@@ -566,11 +568,11 @@ opal:function_exists
 
 Check that a bash function is available on the system.
 
-@param string $function_name 
-
-@returns bool
-
-@uses type command to perform the check
+| **@param** *String* $function_name 
+| 
+| **@output** *Bool*
+| 
+| **@uses** ``type`` command to perform the check
 
 .. code-block:: bash
 
@@ -596,16 +598,16 @@ Write a message to the error log, including the log level. This does the actual
 writing to the log file.
 
 
- @param string $level
-   The logging level of the message. The RFC 5424 determines the levels.
-   The level determines the importance of the message.
-
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
+| **@param** *String* $level
+| The logging level of the message. The RFC 5424 determines the levels.
+| The level determines the importance of the message.
+| 
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| *Optional.* The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
 
 .. code-block:: bash
 
@@ -617,14 +619,14 @@ opal:log_emergency
 
 Log an EMERGENCY-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| Optional. The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+| 
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 
@@ -635,14 +637,14 @@ opal:log_alert
 
 Log an ALERT-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| *Optional.* The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+| 
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 
@@ -654,14 +656,14 @@ opal:log_critical
 
 Log a CRITICAL-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| Optional. The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+| 
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 
@@ -672,14 +674,14 @@ opal:log_error
 
 Log an ERROR-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| Optional. The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+| 
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 
@@ -690,14 +692,14 @@ opal:log_warning
 
 Log an WARNING-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| *Optional.* The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+| 
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 
@@ -708,14 +710,14 @@ opal:log_notice
 
 Log a NOTICE-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| Optional. The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+|
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 
@@ -726,14 +728,14 @@ opal:log_info
 
 Log an INFO-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| Optional. The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+| 
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 
@@ -744,14 +746,14 @@ opal:log_debug
 
 Log an DEBUG-level message.
 
- @param string $message
-   The message you want to write to the error log.
-
- @param string $filepath
-   Optional. The log file $HOME/.local/state/opal/error.log will be
-   if not specified.
-
- @uses opal:log
+| **@param** *String* $message
+| The message you want to write to the error log.
+| 
+| **@param** *String* $filepath
+| *Optional.* The log file ``$HOME/.local/state/opal/error.log`` will be
+| if not specified.
+| 
+| **@uses** ``opal:log``
 
 .. code-block:: bash
 

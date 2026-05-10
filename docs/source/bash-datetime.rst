@@ -38,13 +38,13 @@ in your PATH.
 opal:today
 ----------
 
-    @param string $formatname
-        the name containing the date style and precision separated by a hypen e.g. opal-datetime
-
-    @return string $duration
-        The date formatted according to the given style and format
-
-    @uses opal:get_date_format
+| **@param** *String* $formatname
+| the name containing the date style and precision separated by a hypen e.g. opal-datetime
+| 
+| **@return** *String* $duration
+| The date formatted according to the given style and format
+| 
+| **@uses** opal:get_date_format
 
 The ``opal:today`` function displays the current date/time based on the format.
 By default, it uses the ``opal-datetime`` format. However, you specify a format
@@ -81,18 +81,18 @@ available formats and precision values are defined in the
 opal:someday
 ------------
 
-    It translates a UNIX timestamp into a recognizable format.
+It translates a UNIX timestamp into a recognizable format.
 
-    @param int $unix_time
-        Number of seconds since 1970-01-01T00:00:00-0000
-
-    @param string $formatname
-        Optional. The name containing the date style and precision separated by a hypen e.g. opal-datetime
-
-    @return string $duration    
-        The date formatted according to the given style and format
-
-    @uses opal:get_date_format
+| **@param** *Integer* $unix_time
+| Number of seconds since 1970-01-01T00:00:00-0000
+| 
+| **@param** *String* $formatname
+| Optional. The name containing the date style and precision separated by a hypen e.g. opal-datetime
+| 
+| **@return** *String* $duration    
+| The date formatted according to the given style and format
+| 
+| **@uses** opal:get_date_format
 
 The ``opal:someday`` function is a companion to the ``opal:today`` function. When
 you already have a UNIX timestamp, use ``opal:someday`` to display the
@@ -107,15 +107,15 @@ corresponding date in your preferred format. If the second parameter is not pass
 opal:get_date_format
 --------------------
 
-    The ``opal:get_date_format`` provides a lookup to retrieve a date format by name.
-    There are many formats for you to choose from. It provides some logic for the
-    today and someday functions. 
+The ``opal:get_date_format`` provides a lookup to retrieve a date format by name.
+There are many formats for you to choose from. It provides some logic for the
+today and someday functions. 
 
-    @param string $formatname
-        the name containing the date style and precision separated by a hypen e.g. opal-datetime
-
-    @return string $duration
-        The date formatted according to the given style and format
+| **@param** *String* $formatname
+| the name containing the date style and precision separated by a hypen e.g. opal-datetime
+| 
+| **@output** *String* $duration
+| The date formatted according to the given style and format
 
 
 .. code-block:: text
@@ -213,18 +213,18 @@ Looking to use a day-first format? Try the ``world`` style
 opal:duration
 -------------
 
-    Calculate the difference between two timestamps and display a report. 
+Calculate the difference between two timestamps and display a report. 
 
-    **NOTE** The smaller of the two timestamps must be specified first.
+**NOTE** The smaller of the two timestamps must be specified first.
 
-    @param int $start_time
-        The starting UNIX timestamp
-
-    @param int $end_time
-        The ending UNIX timestamp
-
-    @return string $duration
-        A report of the calculation
+| **@param** *Integer* $start_time
+| The starting UNIX timestamp
+| 
+| **@param** *Integer* $end_time
+| The ending UNIX timestamp
+| 
+| **@return** *String* $duration
+| A report of the calculation
 
 The ``opal:duration`` tells you the difference in time between two unix
 timestamps.
@@ -237,21 +237,21 @@ timestamps.
 opal:interval_to_seconds
 ------------------------
 
-    Get the number of seconds for a given quantity of time.
-    
-    Many tools use the number of seconds for their operation. It can be useful
-    to know number of seconds in a duration of time. This function makes it easy
-    to calculate time intervals like 3 days or 2 weeks.
-    
-    @param string $unit
-        The unit of time you wish to convert to seconds.
-        **Allowed values**: minutes, hours, days, weeks, months
-    
-    @param integer $quantity
-        The number of time units time you wish to convert to seconds
-    
-    @return integer $seconds
-        The calculation result in seconds
+Get the number of seconds for a given quantity of time.
+
+Many tools use the number of seconds for their operation. It can be useful
+to know number of seconds in a duration of time. This function makes it easy
+to calculate time intervals like 3 days or 2 weeks.
+
+| **@param** *String* $unit
+| The unit of time you wish to convert to seconds.
+| **Allowed values**: minutes, hours, days, weeks, months
+| 
+| **@param** *Integer* $quantity
+| The number of time units time you wish to convert to seconds
+| 
+| **@output** *Integer* $seconds
+| The calculation result in seconds
 
 .. code-block:: text
 
@@ -262,13 +262,13 @@ opal:interval_to_seconds
 opal:epoch
 ----------
 
-    Get the UNIX epoch seconds for a given date, assuming midnight.
-    
-    @param string $date
-        The date formatted as YYYY-MM-DD
+Get the UNIX epoch seconds for a given date, assuming midnight.
 
-    @return integer $seconds
-        The date represented in UNIX epoch seconds
+| **@param** *String* $date
+| The date formatted as YYYY-MM-DD
+| 
+| @return *Integer* $seconds
+| The date represented in UNIX epoch seconds
 
 .. code-block:: text
 
