@@ -3,11 +3,11 @@
 # -- Project information
 
 project = 'Opal'
-copyright = '2024, Andrew Woods'
 author = 'Andrew Woods'
+copyright = "2026, Andrew Woods"
 
-release = '3.0'
-version = '3.0.0-alpha'
+release = "3.0"
+version = "3.0.0"
 
 # -- General configuration
 

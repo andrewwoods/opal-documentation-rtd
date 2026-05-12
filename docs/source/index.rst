@@ -1,23 +1,28 @@
 Opal Framework
 ==============
 
-Opal is a command line framework for Bash users. This `Opal Framework
-<https://github.com/andrewwoods/opal>`_ can be found on Github, and provides a
-solid foundation for your dotfiles. This foundation can be easily re-used
-across users and machines. Opal is designed to be easily extended, allowing you
-to add your custom configuration on top of it. Put simply, Opal is a collection
-of unix/linux dotfiles and utilities, reusable across machines and users, for
-people who love the command line.
+Opal is a command line framework for Bash users. The `Opal Framework
+<https://github.com/andrewwoods/opal>`_ can be found on Github.
+
+Each person creates their own dotfiles. There's often a lot of copying between
+them, and even between multiple configs for a specific person. Scripting in
+Bash can be challenging. Opal is a framework that fixes these two issues, by
+providing a cohesive set of files to create a strong, common foundation.
+
+This foundation is easily re-used across users and machines. Opal is designed
+to be easily extended, allowing you to add your custom configuration on top of
+it. Opal also provides a Bash scriptiong layer.
+
+__Put simply__, Opal is a collection of unix/linux dotfiles and utilities,
+reusable across machines and users, for people who love the command line.
+
 
 Version
 -------
 
-The current Opal version is 3.0, and is planned for release in 2025 August.
+This covers **version 3** of Opal. So much work was done to create a scripting
+layer for Bash, documentation became necessary.
 
-.. note::
-
-   The Opal Documentation project is under active development, in anticipation
-   for the upcoming Opal Version 3.0 launch.
 
 Contents
 --------

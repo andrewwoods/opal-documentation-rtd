@@ -17,7 +17,7 @@ Export Variables
 
 .. code-block:: bash
 
-    export OPAL_VERSION="3.0.0-beta"
+    export OPAL_VERSION="3.0.0"
 
     # The $OPAL_CONFIG_DIR is not meant to replace the XDG_CONFIG_HOME directory.
     # Rather it's an additional directory - one that could be used in the
@@ -85,10 +85,10 @@ Display notice about what Opal is, where to find the repo, and copyright notice.
 
 | **@output** *String*
 
-.. code-block:: bash
+.. code:: bash
 
     $ opal:about
-    Opal version: 3.0.0-beta
+    Opal version: 3.0.0
     Bash version: 3.2.57(1)-release
     
     Opal is a command line framework. It's a foundation to provide a consistent
