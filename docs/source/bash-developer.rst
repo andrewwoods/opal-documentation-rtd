@@ -5,8 +5,8 @@ Bash Developer
 This is a collection of functions a developer may find interesting.
 
 
-function opal:check_site()
-##########################
+function opal:check_site
+########################
 
 Check if the site at $url is up. 
 
@@ -30,8 +30,8 @@ is printed to the screen. Be kind to systems.
 
 
 
-function opal:http_status()
-###########################
+function opal:http_status
+#########################
 
 This function checks a local file for a user-provided status code for it's title .
 
@@ -50,8 +50,8 @@ This function checks a local file for a user-provided status code for it's title
     see https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes
 
 
-function opal:parse_git_branch()
-################################
+function opal:parse_git_branch
+##############################
 
 Extract the name of the current git branch.
 
@@ -66,8 +66,8 @@ This is used primarily by opal functions that manage the display of PS1.
     branch="(opal:parse_git_branch)"
 
 
-function opal:trace_url()
-#########################
+function opal:trace_url
+#######################
 
 Unfurl a URL to discover it's final location
 

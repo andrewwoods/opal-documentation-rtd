@@ -212,8 +212,8 @@ consisting entirely of whitespace will evaluate true.
     fi
 
 
-opal:success()
-##############
+opal:success
+############
 
 Write a success message written in a bright green color. 
 
@@ -228,8 +228,8 @@ Write a success message written in a bright green color.
     opal:success "This is your message"
 
 
-opal:failure()
-##############
+opal:failure
+############
 
 Write a failure message written in a bright red color. 
 
@@ -243,8 +243,8 @@ Write a failure message written in a bright red color.
 
     opal:failure "This is your success message"
 
-opal:message()
-##############
+opal:message
+############
 
 Write a informational message written in a bright cyan color. 
 
@@ -259,8 +259,8 @@ Write a informational message written in a bright cyan color.
     opal:message "This is your informational message"
 
 
-opal:label()
-############
+opal:label
+##########
 
 Write a label written in a bright yellow color. 
 
@@ -274,8 +274,8 @@ Write a label written in a bright yellow color.
 
     opal:label "This is your label"
 
-opal:speak()
-############
+opal:speak
+##########
 
 Read out loud a string of text. Assumes the ``say`` command is installed. 
 
@@ -291,8 +291,8 @@ Read out loud a string of text. Assumes the ``say`` command is installed.
 
    opal:speak 'Would you like to play a nice game of chess?'
 
-opal:ask()
-##########
+opal:ask
+########
 
 | Prompt the user with a statement and receive their input
 | 
@@ -310,8 +310,8 @@ opal:ask()
    $ echo "The answer was $answer"
 
 
-opal:sleep()
-############
+opal:sleep
+##########
 
 Pause execution for a limited number of seconds. Default is 5 seconds.  
 
