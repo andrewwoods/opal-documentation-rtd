@@ -51,7 +51,8 @@ This is the easiest method, recommended for most users.
 3. Click the "Download ZIP" text.
 4. Save the file `opal-master.zip` file to your system.
 5. Extract the file `opal-master.zip`
-6. Run the Install Script in your Terminal
+6. ``cd opal-master``
+7. Run the Install Script in your Terminal
 
 .. code-block:: console
 

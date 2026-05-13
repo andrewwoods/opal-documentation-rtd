@@ -57,5 +57,5 @@ hadn't used reST before. So I decided to use reST for this project.
 
 ## Credits and Acknowledgments
 
-* Project Creator:  [Andrew Woods](https://andrewwoods.net)
+* Project Creator: [Andrew Woods](https://andrewwoods.net)
 

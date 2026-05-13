@@ -41,7 +41,7 @@ This function checks a local file for a user-provided status code for it's title
 
 @uses grep
 
-.. code-block:: bash
+.. code-block:: text
 
     $ opal:http_status 307
     307:Temporary Redirect
@@ -63,7 +63,7 @@ This is used primarily by opal functions that manage the display of PS1.
 
 .. code-block:: bash
     
-    branch="(opal:parse_git_branch)"
+    branch="$(opal:parse_git_branch)"
 
 
 function opal:trace_url

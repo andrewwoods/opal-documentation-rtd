@@ -13,7 +13,7 @@ This foundation is easily re-used across users and machines. Opal is designed
 to be easily extended, allowing you to add your custom configuration on top of
 it. Opal also provides a Bash scriptiong layer.
 
-__Put simply__, Opal is a collection of unix/linux dotfiles and utilities,
+*Put simply*, Opal is a collection of unix/linux dotfiles and utilities,
 reusable across machines and users, for people who love the command line.
 
 
